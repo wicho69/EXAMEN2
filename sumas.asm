@@ -9,6 +9,7 @@ MAIN_PROG CODE                      ; let linker place main program
 ;variables para el contador:
  i equ 0x30
  j equ 0x31 ;almacena
+ x equ 0x32
 
 ;inicio del programa: 
 START
@@ -16,14 +17,17 @@ MOVLW 0x07 ;Apagar comparadores
 MOVWF CMCON
  
  
- MOVLW d'7'
+ MOVLW d'8'
  MOVWF j
  MOVLW d'1'
  MOVWF i ;aqui 
+ MOVLW d'1'
+ MOVWF x ;acumula potencias 
  
  LOOP ;inicia loop
  ADDWF i,1 ;aqui
  MOVFW i
+ ADDWF x,1
  
  DECF j
  BTFSC j,0
@@ -33,6 +37,8 @@ MOVWF CMCON
  BTFSC j,2
  GOTO LOOP
  BTFSC j,3
+ GOTO LOOP
+ BTFSC j,4
  GOTO LOOP
 
 			
