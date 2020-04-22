@@ -8,7 +8,7 @@ RES_VECT  CODE    0x0000            ; processor reset vector
 MAIN_PROG CODE                      ; let linker place main program
 ;variables para el contador:
  i equ 0x30
- j equ 0x32 ;almacena
+ j equ 0x31 ;almacena
 
 ;inicio del programa: 
 START
