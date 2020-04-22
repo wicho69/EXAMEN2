@@ -20,12 +20,12 @@ MOVWF CMCON
  MOVLW d'8'
  MOVWF j
  MOVLW d'1'
- MOVWF i ;aqui 
+ MOVWF i ;
  MOVLW d'1'
  MOVWF x ;acumula potencias 
  
  LOOP ;inicia loop
- ADDWF i,1 ;aqui
+ ADDWF i,1 ;stop
  MOVFW i
  ADDWF x,1
  
@@ -42,4 +42,4 @@ MOVWF CMCON
  GOTO LOOP
 
 			
-    END
+    END ;stop
